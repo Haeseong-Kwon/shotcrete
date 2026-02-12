@@ -6,21 +6,14 @@ import { ArrowRight } from "lucide-react";
 
 import { useRef, useState } from "react";
 
-const projects = [
-    { id: 1, title: "OO터널 숏크리트 타설", location: "강원도 평창", tag: "숏크리트" },
-    { id: 2, title: "XX지구 배후단지 사면보강", location: "경기도 하남", tag: "어스앵커" },
-    { id: 3, title: "△△신도시 공원 녹생토", location: "인천 연수구", tag: "녹생토" },
-    { id: 4, title: "□□도로 확장 암반 락볼트", location: "충북 충주", tag: "락볼트" },
-    { id: 5, title: "S건설 물류센터 사면안정", location: "경기도 과천", tag: "소일네일링" },
-    { id: 6, title: "국도 7호선 낙석 방지 공사", location: "강원도 삼척", tag: "락볼트" },
-    { id: 7, title: "테마파크 경관 사면 녹화", location: "제주도 서귀포", tag: "녹생토" },
-    { id: 8, title: "지하철 연장 구간 지반보강", location: "서울 양천구", tag: "숏크리트" },
-];
+import { PORTFOLIO_PHOTOS } from "@/constants/portfolio";
+import Image from "next/image";
 
 export default function FeaturedProjects() {
     const [isPaused, setIsPaused] = useState(false);
 
-    // Duplicate projects to create a seamless infinite loop
+    // Use real data from constants
+    const projects = PORTFOLIO_PHOTOS;
     const duplicatedProjects = [...projects, ...projects];
 
     return (
@@ -61,12 +54,17 @@ export default function FeaturedProjects() {
                                 key={`${project.id}-${index}`}
                                 className="relative shrink-0 w-[280px] md:w-[350px] group overflow-hidden rounded-2xl aspect-[4/5] bg-slate-900 shadow-xl"
                             >
+                                <Image
+                                    src={project.imageUrl}
+                                    alt={project.title}
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-80"
+                                />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10 opacity-70 group-hover:opacity-90 transition-opacity" />
-                                <div className="absolute inset-0 flex items-center justify-center text-white/5 text-2xl font-black italic uppercase">FIELD PHOTO</div>
 
                                 <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
                                     <span className="inline-block px-3 py-1 bg-primary text-white text-[10px] font-black rounded-full mb-3 uppercase tracking-widest">
-                                        {project.tag}
+                                        {project.category}
                                     </span>
                                     <h3 className="text-xl md:text-2xl text-white font-black mb-2 tracking-tight group-hover:text-primary transition-colors leading-tight">
                                         {project.title}
