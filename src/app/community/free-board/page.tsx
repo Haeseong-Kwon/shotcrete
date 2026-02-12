@@ -1,4 +1,4 @@
-import { BoardHeader } from "@/components/community/BoardHeader";
+import { PageHero } from "@/components/layout/PageHero";
 import { BoardList } from "@/components/community/BoardList";
 
 const freeBoardPosts = [
@@ -11,7 +11,7 @@ const freeBoardPosts = [
 export default function FreeBoardPage() {
     return (
         <main>
-            <BoardHeader
+            <PageHero
                 title="자유게시판"
                 description="자유롭게 의견을 나누고 시공 관련 문의를 남겨주세요."
                 category="FREE BOARD"

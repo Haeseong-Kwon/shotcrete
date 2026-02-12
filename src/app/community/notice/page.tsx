@@ -1,4 +1,4 @@
-import { BoardHeader } from "@/components/community/BoardHeader";
+import { PageHero } from "@/components/layout/PageHero";
 import { BoardList } from "@/components/community/BoardList";
 
 const noticePosts = [
@@ -11,7 +11,7 @@ const noticePosts = [
 export default function NoticePage() {
     return (
         <main>
-            <BoardHeader
+            <PageHero
                 title="공지사항"
                 description="덕림기초개발의 새로운 소식과 주요 공지사항을 전달해 드립니다."
                 category="NOTICE"

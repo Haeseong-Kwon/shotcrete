@@ -48,8 +48,18 @@ export function Navbar() {
         <header className="fixed top-0 z-50 w-full border-b border-slate-200/50 bg-white/70 backdrop-blur-xl transition-all duration-300">
             <div className="container mx-auto flex h-20 items-center justify-between px-6 lg:px-8">
                 <div className="flex items-center gap-2">
-                    <Link href="/" className="text-2xl font-black tracking-tight text-slate-900 group">
-                        덕림<span className="text-primary group-hover:text-primary/80 transition-colors">기초개발</span>
+                    <Link href="/" className="flex items-center gap-2 group">
+                        <div className="bg-primary/10 p-2 rounded-lg group-hover:bg-primary/20 transition-colors">
+                            <Mountain className="h-6 w-6 text-primary" />
+                        </div>
+                        <div className="flex flex-col lg:flex-row lg:items-end lg:gap-2 leading-none">
+                            <span className="text-2xl font-black tracking-tighter text-slate-900 group-hover:text-slate-700 transition-colors">
+                                DUCLIM
+                            </span>
+                            <span className="hidden sm:block text-xs font-bold text-slate-500 mb-1 group-hover:text-primary transition-colors">
+                                고객의 꿈을 위한 파트너, 덕림기초개발
+                            </span>
+                        </div>
                     </Link>
                 </div>
 
@@ -124,8 +134,18 @@ export function Navbar() {
                         </SheetTrigger>
                         <SheetContent side="right" className="w-[300px] sm:w-[400px] overflow-y-auto">
                             <SheetHeader className="mb-8 border-b pb-6">
-                                <SheetTitle className="text-left text-2xl font-black tracking-tight">
-                                    덕림<span className="text-primary">기초개발</span>
+                                <SheetTitle className="text-left flex items-center gap-2">
+                                    <div className="bg-primary/10 p-2 rounded-lg">
+                                        <Mountain className="h-5 w-5 text-primary" />
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <span className="text-xl font-black tracking-tighter text-slate-900 leading-none">
+                                            DUCLIM
+                                        </span>
+                                        <span className="text-[10px] font-bold text-slate-500">
+                                            고객의 꿈을 위한 파트너, 덕림기초개발
+                                        </span>
+                                    </div>
                                 </SheetTitle>
                             </SheetHeader>
                             <div className="flex flex-col gap-2">

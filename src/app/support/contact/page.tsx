@@ -1,3 +1,4 @@
+import { PageHero } from "@/components/layout/PageHero";
 import { InquiryForm } from "@/components/support/InquiryForm";
 import { siteConfig } from "@/constants/siteConfig";
 import { Phone, Mail, MapPin, Printer, Smartphone, Clock } from "lucide-react";
@@ -6,19 +7,12 @@ import { Card, CardContent } from "@/components/ui/card";
 export default function SupportPage() {
     return (
         <div className="min-h-screen bg-slate-50 pb-24">
-            {/* Header Section */}
-            <section className="bg-slate-900 text-white py-24 relative overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(59,130,246,0.1),transparent)]" />
-                <div className="container mx-auto px-6 relative z-10 text-left">
-                    <div className="max-w-3xl">
-                        <h1 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">고객지원</h1>
-                        <p className="text-slate-400 text-lg md:text-xl leading-relaxed">
-                            덕림기초개발은 고객님의 목소리에 항상 귀 기울이고 있습니다. <br className="hidden md:inline" />
-                            궁금하신 점이나 견적 문의를 남겨주시면 신속하게 답변해 드리겠습니다.
-                        </p>
-                    </div>
-                </div>
-            </section>
+            <PageHero
+                title="고객지원"
+                subtitle="(Support)"
+                description="덕림기초개발은 고객님의 목소리에 항상 귀 기울이고 있습니다. 궁금하신 점이나 견적 문의를 남겨주시면 신속하게 답변해 드리겠습니다."
+                category="Contact Us"
+            />
 
             <div className="container mx-auto px-6 -mt-12 relative z-20 text-left">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
