@@ -45,8 +45,8 @@ export function Navbar() {
     const [isOpen, setIsOpen] = React.useState(false);
 
     return (
-        <header className="fixed top-0 z-50 w-full border-b border-slate-200/50 bg-white/70 backdrop-blur-xl transition-all duration-300">
-            <div className="container mx-auto flex h-20 items-center justify-between px-6 lg:px-8">
+        <header className="fixed top-0 z-50 w-full border-b border-slate-200/80 bg-white/90 backdrop-blur-xl transition-all duration-300">
+            <div className="container mx-auto flex h-24 items-center justify-between px-6 lg:px-8">
                 <div className="flex items-center gap-2">
                     <Link href="/" className="flex items-center gap-2 group">
                         <div className="bg-primary/10 p-2 rounded-lg group-hover:bg-primary/20 transition-colors">

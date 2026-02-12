@@ -53,7 +53,7 @@ export function PageHero({
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="inline-block px-4 py-1.5 mb-6 text-[11px] font-black tracking-[0.2em] uppercase text-primary bg-primary/10 rounded-full border border-primary/20 backdrop-blur-md shadow-lg"
+                            className="inline-block px-4 py-1.5 mb-6 text-[11px] font-black tracking-[0.2em] uppercase text-cyan-400 bg-cyan-400/10 rounded-full border border-cyan-400/20 backdrop-blur-md shadow-lg"
                         >
                             {category}
                         </motion.span>
@@ -62,13 +62,13 @@ export function PageHero({
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tighter leading-tight drop-shadow-xl flex flex-col items-center gap-2">
                         {title}
                         {subtitle && (
-                            <span className="text-primary/90 text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">
+                            <span className="text-cyan-400 text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight drop-shadow-md">
                                 {subtitle}
                             </span>
                         )}
                     </h1>
 
-                    <p className="text-lg text-slate-200 font-medium max-w-2xl mx-auto leading-relaxed drop-shadow-md">
+                    <p className="text-lg text-cyan-400/90 font-medium max-w-2xl mx-auto leading-relaxed drop-shadow-md">
                         {description}
                     </p>
                 </motion.div>
