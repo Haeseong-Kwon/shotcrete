@@ -62,7 +62,7 @@ export const PORTFOLIO_VIDEOS: PortfolioVideo[] = Array.from({ length: 13 }).map
     id: `v${i + 1}`,
     title: `시공 현장 영상 ${String(i + 1).padStart(2, "0")}`,
     description: "덕림기초개발의 실제 시공 과정을 담은 기록 영상입니다.",
-    thumbnailUrl: "/images/portfolio/1.jpeg", // 실제 썸네일 대신 사진 01 활용
+    thumbnailUrl: `/images/portfolio/${i + 1}.mp4`, // 비디오 파일을 썸네일 소스로 활용
     videoUrl: `/images/portfolio/${i + 1}.mp4`,
     isLocal: true,
     location: "시공 현장",

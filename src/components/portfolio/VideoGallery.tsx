@@ -23,13 +23,23 @@ export function VideoGallery({ videos }: VideoGalleryProps) {
                     className="group overflow-hidden cursor-pointer border-none shadow-md hover:shadow-xl transition-all duration-300"
                     onClick={() => setSelectedVideo(video)}
                 >
-                    <div className="aspect-video relative overflow-hidden">
-                        <Image
-                            src={video.thumbnailUrl}
-                            alt={video.title}
-                            fill
-                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
+                    <div className="aspect-video relative overflow-hidden bg-slate-900">
+                        {video.isLocal ? (
+                            <video
+                                src={`${video.thumbnailUrl}#t=0.1`}
+                                preload="metadata"
+                                muted
+                                playsInline
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                        ) : (
+                            <Image
+                                src={video.thumbnailUrl}
+                                alt={video.title}
+                                fill
+                                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                        )}
                         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
                             <motion.div
                                 whileHover={{ scale: 1.1 }}
