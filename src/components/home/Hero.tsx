@@ -45,7 +45,7 @@ export function Hero() {
                         Foundation Engineering Excellence
                     </motion.span>
 
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-8 tracking-tighter leading-[1.1] drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]">
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-8 tracking-tighter leading-[1.1] drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]">
                         토목의 기초를 세우는 <br />
                         <span className="text-cyan-400 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">정밀한 기술력</span>
                     </h1>
@@ -54,7 +54,7 @@ export function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-                        className="mt-6 text-lg md:text-xl text-slate-200 font-medium max-w-3xl mx-auto leading-relaxed drop-shadow-md"
+                        className="mt-6 text-base md:text-xl text-slate-200 font-medium max-w-3xl mx-auto leading-relaxed drop-shadow-md"
                     >
                         숏크리트, 녹생토, 어스앵커 등 전문 공법으로 <br className="hidden md:inline" />
                         대한민국의 안전하고 완벽한 기반을 조성합니다.
