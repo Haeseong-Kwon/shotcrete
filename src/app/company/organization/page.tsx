@@ -1,3 +1,5 @@
+"use client";
+
 import { PageHero } from "@/components/layout/PageHero";
 import { motion } from "framer-motion";
 import { Users, Code, Activity, ShieldCheck } from "lucide-react";
