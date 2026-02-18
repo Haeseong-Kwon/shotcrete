@@ -78,28 +78,46 @@ export function VideoGallery({ videos }: VideoGalleryProps) {
             ))}
 
             <Dialog open={!!selectedVideo} onOpenChange={() => setSelectedVideo(null)}>
-                <DialogContent className="max-w-6xl w-[95dvw] p-0 bg-black border-none overflow-hidden aspect-video">
+                <DialogContent className="max-w-5xl w-[95dvw] p-0 bg-black border-none overflow-hidden sm:rounded-2xl">
                     <DialogTitle className="sr-only">{selectedVideo?.title}</DialogTitle>
                     {selectedVideo && (
-                        selectedVideo.isLocal ? (
-                            <div className="w-full h-full flex items-center justify-center bg-black">
-                                <video
-                                    src={selectedVideo.videoUrl}
-                                    controls
-                                    autoPlay
-                                    playsInline
-                                    className="w-full h-full object-contain"
-                                />
-                            </div>
-                        ) : (
-                            <iframe
-                                src={selectedVideo.videoUrl}
-                                title={selectedVideo.title}
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowFullScreen
-                                className="w-full h-full"
-                            />
-                        )
+                        <div className="relative w-full h-full min-h-[50vh] max-h-[85vh] flex items-center justify-center overflow-hidden">
+                            {selectedVideo.isLocal ? (
+                                <>
+                                    {/* Blurred Background for PC - fills the empty space for portrait videos */}
+                                    <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none hidden md:block">
+                                        <video
+                                            src={selectedVideo.videoUrl}
+                                            muted
+                                            loop
+                                            autoPlay
+                                            className="w-full h-full object-cover blur-2xl opacity-40 scale-110"
+                                        />
+                                    </div>
+
+                                    {/* Main Video Layer */}
+                                    <div className="relative z-10 w-full h-full flex items-center justify-center">
+                                        <video
+                                            src={selectedVideo.videoUrl}
+                                            controls
+                                            autoPlay
+                                            playsInline
+                                            className="max-w-full max-h-[85vh] w-auto h-auto object-contain shadow-2xl"
+                                        />
+                                    </div>
+                                </>
+                            ) : (
+                                <div className="w-full aspect-video">
+                                    <iframe
+                                        src={selectedVideo.videoUrl}
+                                        title={selectedVideo.title}
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowFullScreen
+                                        className="w-full h-full"
+                                    />
+                                </div>
+                            )}
+                        </div>
                     )}
                 </DialogContent>
             </Dialog>
